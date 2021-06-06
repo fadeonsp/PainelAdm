@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo</title>
+
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body>
+
+    <div class="d-flex" id="wrapper">
+
+        <!-----sidebar-->
+        <div id="sidebar-wrapper">
+            <div class="sidebar-heading">
+                <img src="./img/logo.png">
+                <span>Painel da Sidebar</span>
+            </div>
+            <div class="list-group list-group-flush border-right">
+                <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-home"></i> Inicio</a>
+                <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-users"></i>Funcionários</a>
+                <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-box-open"></i>Produtos</a>
+                <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-sitemap"></i>Categorias</a>
+                <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-people-carry"></i>Fornecedores</a>
+                <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-chart-bar"></i>Relatórios</a>
+            </div>
+        </div>
+
+        <!-------conteudo---->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light" id="son-navbar">
+                <span id="menu-toggle" class="mr-auto"><img src="./img/logo.png" class="mx-auto d-block"></span>
+                <a href="#" class="navbar-brand" id="navbar-title">Painel</a>
+
+                <button class="navbar-toggler" 
+                    type="button" 
+                    data-toggle="collapse" 
+                    data-target="#son-navbar-collapse"
+                    aria-controls="son-navbar-collapse"
+                    aria-expanded="false"
+                    aria-label="Exibe toda navbar"
+                    >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="son-navbar-collapse">
+                    <form class="form-inline" id="navbar-search-form">
+                        <input type="text" class="form-control form-field search-field" placeholder="Pesquisar">
+                    </form>
+
+                    <div id="navbar-profile" class="ml-auto">
+                        <img src="./img/devfront.png" alt="">
+                        <span>Dev Front</span>
+                    </div>
+                </div><!---collapse-->
+        
+            </nav>
+
+            <div id="content" class="container">
+
+                <!--------table---------->
+                <div class="table-title">
+                    <h3>Usuários</h3>
+                    <input type="text" class="form-control form-field search-field" placeholder="Pesquisar">
+                </div>
+                <table class="table bg-white">
+                    <thead>
+                        <tr>
+                            <th class="table-col-title">#</th>
+                            <th class="table-col-title">NOME</th>
+                            <th class="table-col-title">SOBRENOME</th>
+                            <th class="table-col-title">USUÁRIO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <td>Eduardo</td>
+                            <td>Cesar</td>
+                            <td>@devfront</td>
+                        </tr>
+                        <tr>
+                            <th>1</th>
+                            <td>Eduardo</td>
+                            <td>Cesar</td>
+                            <td>@devfront</td>
+                        </tr>
+                        <tr>
+                            <th>1</th>
+                            <td>Eduardo</td>
+                            <td>Cesar</td>
+                            <td>@devfront</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--------table---------->
+
+                <h3 id="main-page-form-title" class="son-main-text-3">Novo Artigo</h3>
+                <div>
+                    <form class="card son-form">
+                        <div class="card-body son-form-body">
+                            <div class="form-group">
+                                <label>Autor</label>
+                                <input class="form-field son-form-field form-control" id="user-field" placeholder="Autor">
+                                <hr>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Título</label>
+                                <input class="form-field son-form-field form-control" id="title-field" placeholder="Título">
+                                <hr>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Conteúdo</label>
+                                <textarea placeholder="texto qualquer" class="form-field son-form-field form-control" id="body-field"></textarea>
+                                <hr>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Data</label>
+                                <input type="date" class="form-field son-form-field form-control " id="date-field" placeholder="Autor">
+                            </div>
+                        </div><!-----card body---->
+                        
+
+                        <div class="confirm-btns card-footer">
+                            <button class="btn btn-primary">Criar e adicionar outro</button>
+                            <button class="btn btn-primary">publicar Post</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <!---------------->
+                    <h3 id="vendas-h3">Vendas</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <canvas id="relatorio"></canvas>
+                        </div>
+                    </div>
+                <!---------------->
+
+            </div>
+
+        </div><!-----page content-->
+
+    </div>
+  
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    
+    <!--- evento de click no menu toggle-->
+    <script>
+        $('#menu-toggle').click(function(event){
+            event.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+    <script src="./js/chart/chart.min.js"></script>
+    <script>
+
+        var contexto = document.getElementById("relatorio").getContext('2d');
+        var grafico = new Chart(contexto, {
+            type: 'line',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
+                datasets: [{
+                    label: 'vendas do ano',
+                    backgroundColor: "#5898d9ff",
+                    borderColor: "#5898d9ff",
+                    data: [10, 5, 18, 23, 20, 19, 27]
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
